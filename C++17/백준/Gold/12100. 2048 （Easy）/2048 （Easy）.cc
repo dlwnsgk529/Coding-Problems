@@ -63,13 +63,6 @@ std::vector<std::vector<int>> move(int dir, std::vector<std::vector<int>> board)
 }
 
 void playGame(int leftMove, std::vector<std::vector<int>> board){
-    // for(int y = 0; y < N; y++){
-    //     for(int x = 0; x < N; x++){
-    //         std::cout << board[y][x] << " ";
-    //     }
-    //     std::cout << "\n";
-    // }
-    // printf("----------\n");
     while(leftMove > 0){
         leftMove--;
         std::vector<std::vector<int>> nextBoard;
@@ -77,25 +70,6 @@ void playGame(int leftMove, std::vector<std::vector<int>> board){
             nextBoard = move(i, board);
             playGame(leftMove, nextBoard);
         }
-    }
-}
-
-void func(std::vector<std::vector<int>> board){
-    std::vector<std::vector<int>> newBoard = board;
-    
-    newBoard = rotate(newBoard);
-
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++ ){
-            std::cout << newBoard[i][j] << " ";
-        }
-        std::cout << "\n";
-    }
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++ ){
-            std::cout << board[i][j] << " ";
-        }
-        std::cout << "\n";
     }
 }
 
